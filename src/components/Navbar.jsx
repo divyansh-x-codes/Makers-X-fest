@@ -12,7 +12,7 @@ export default function Navbar() {
       <div id="navbar-wrapper">
         <nav id="navbar">
           <Link to="/" className="nav-logo" onClick={closeMenu}>
-            <img src="src/assets/fire .gif" alt="MakersX Logo" className="nav-logo-img" />
+            <img src="src/assets/fire.gif" alt="MakersX Logo" className="nav-logo-img" />
           </Link>
           <ul className="nav-links">
             <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>

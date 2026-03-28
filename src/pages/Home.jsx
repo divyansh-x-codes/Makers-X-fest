@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import HeroCanvas from '../components/HeroCanvas';
 import Reveal from '../components/Reveal';
 import fireVideo from '../assets/Fire2.mp4';
-import makersLogo from '../assets/fire .gif';
+import makersLogo from '../assets/fire.gif';
 import GalleryMarquee from '../components/GalleryMarquee';
 
 export default function Home() {
