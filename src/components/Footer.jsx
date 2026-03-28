@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import makersLogoFooter from '../assets/makers-logo.png';
 
 export default function Footer() {
   return (
@@ -15,8 +16,8 @@ export default function Footer() {
               bottom: `${Math.random() * 100}%`,
               animationDelay: `-${Math.random() * 5}s`,
               animationDuration: `${5 + Math.random() * 5}s`,
-              background: i % 2 === 0 ? 'var(--amber)' : 'var(--purple)',
-              boxShadow: `0 0 10px ${i % 2 === 0 ? 'var(--amber)' : 'var(--purple)'}`
+              background: i % 3 === 0 ? 'var(--teal)' : i % 3 === 1 ? 'var(--red)' : 'var(--amber)',
+              boxShadow: `0 0 10px ${i % 3 === 0 ? 'var(--teal)' : i % 3 === 1 ? 'var(--red)' : 'var(--amber)'}`
             }}
           />
         ))}
@@ -27,7 +28,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer-col-v3 brand-section">
             <Link to="/" className="footer-logo">
-              <img src="src/assets/fire.gif" alt="MakersX Logo" className="footer-logo-img" />
+              <img src={makersLogoFooter} alt="MakersX Logo" className="footer-logo-img" />
             </Link>
             <p className="footer-motto-text">IGNITE. BUILD. WIN.</p>
             <p className="footer-subtext">Innovation beyond limits.</p>

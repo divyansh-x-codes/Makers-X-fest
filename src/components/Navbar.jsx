@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import makersLogo from '../assets/fire.gif';
+import makersLogo from '../assets/makers-logo.png';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import Reveal from '../components/Reveal';
 
-import makersLogo from '../assets/fire.gif';
+import makersLogo from '../assets/makers-logo.png';
 import GalleryMarquee from '../components/GalleryMarquee';
 
 export default function Home() {
@@ -58,9 +58,9 @@ export default function Home() {
                 width: '100%',
                 maxWidth: '500px',
                 height: 'auto',
-                mixBlendMode: 'screen',
-                filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4))',
-                marginTop: '-2rem'
+                filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))',
+                marginTop: '-2rem',
+                borderRadius: '4px',
               }}
             />
             <div style={{ marginTop: '1rem' }}><span className="accent2">FEST</span> 2026</div>
