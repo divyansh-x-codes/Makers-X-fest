@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import HeroCanvas from '../components/HeroCanvas';
 import Reveal from '../components/Reveal';
-import FireSparkles from '../components/FireSparkles';
+
 import makersLogo from '../assets/fire.gif';
 import GalleryMarquee from '../components/GalleryMarquee';
 
@@ -41,10 +41,8 @@ export default function Home() {
 
   return (
     <div id="page-home" className="page active scanlines" style={{ paddingTop: 0 }}>
-      {/* Hero Section relative to Navbar which is fixed */}
-      <section id="hero">
-        {/* 🔥 FIRE SPARKLES BACKGROUND */}
-        <FireSparkles count={70} />
+      {/* Hero Section */}
+      <section id="hero" className="grid-sparkle-bg">
 
         <HeroCanvas />
         <div className="hero-bg"></div>
