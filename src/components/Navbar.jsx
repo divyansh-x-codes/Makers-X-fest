@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import makersLogo from '../assets/fire.gif';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Navbar() {
       <div id="navbar-wrapper">
         <nav id="navbar">
           <Link to="/" className="nav-logo" onClick={closeMenu}>
-            <img src="src/assets/fire.gif" alt="MakersX Logo" className="nav-logo-img" />
+            <img src={makersLogo} alt="MakersX Logo" className="nav-logo-img" />
           </Link>
           <ul className="nav-links">
             <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
