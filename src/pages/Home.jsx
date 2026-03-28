@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import HeroCanvas from '../components/HeroCanvas';
 import Reveal from '../components/Reveal';
-import fireVideo from '../assets/Fire2.mp4';
+import FireSparkles from '../components/FireSparkles';
 import makersLogo from '../assets/fire.gif';
 import GalleryMarquee from '../components/GalleryMarquee';
 
@@ -43,43 +43,8 @@ export default function Home() {
     <div id="page-home" className="page active scanlines" style={{ paddingTop: 0 }}>
       {/* Hero Section relative to Navbar which is fixed */}
       <section id="hero">
-        {/* 🔥 FIRE BACKGROUND (FULL + VISIBLE) */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            zIndex: 0,
-            overflow: 'hidden',
-          }}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center bottom',
-              opacity: 1,
-              filter: 'brightness(1.2) contrast(1.1)',
-              transform: 'translateY(15vh) scale(1.1)',
-            }}
-          >
-            <source src={fireVideo} type="video/mp4" />
-          </video>
-
-          {/* 🔥 LIGHT OVERLAY (fire visible rahe) */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: `linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 40%, rgba(6,6,8,0.75) 75%, #060608 100%)`,
-
-            }}
-          />
-        </div>
+        {/* 🔥 FIRE SPARKLES BACKGROUND */}
+        <FireSparkles count={70} />
 
         <HeroCanvas />
         <div className="hero-bg"></div>
