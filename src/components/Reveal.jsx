@@ -5,18 +5,24 @@ export default function Reveal({ children, className = '' }) {
   const domRef = useRef();
 
   useEffect(() => {
+    const el = domRef.current;
+    if (!el) return;
+
+    // Immediately visible if already in viewport on mount (fixes mobile nav issue)
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) setIsVisible(true);
       });
-    }, { threshold: 0.1 });
-    
-    const currentRef = domRef.current;
-    if (currentRef) observer.observe(currentRef);
-    
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+    observer.observe(el);
+    return () => observer.unobserve(el);
   }, []);
 
   return (
