@@ -5,7 +5,7 @@ export default function Events() {
   return (
     <div id="page-events" className="page active scanlines" style={{ paddingTop: 0 }}>
       <div className="page-hero">
-        <h1>ALL <span style={{color:'var(--amber)'}}>EVENTS</span></h1>
+        <h1>ALL <span style={{ color: 'var(--amber)' }}>EVENTS</span></h1>
         <p>Eight high-stakes competitions. Two epic days.</p>
       </div>
       <div className="section grid-sparkle-bg">
@@ -13,7 +13,7 @@ export default function Events() {
           {/* IGNITE */}
           <Link to="/events/ignite" className="event-card">
             <div className="event-card-img ignite-bg">
-              <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=800&auto=format&fit=crop" alt="IGNITE" />
+              <img src="https://i.pinimg.com/736x/14/be/10/14be1075d3106e4e8c6187c2f8c192af.jpg" alt="IGNITE" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -32,7 +32,7 @@ export default function Events() {
           {/* CASE HUNT */}
           <Link to="/events/casehunt" className="event-card">
             <div className="event-card-img casehunt-bg">
-              <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=800&auto=format&fit=crop" alt="CASE HUNT" />
+              <img src="https://i.pinimg.com/736x/be/b0/b8/beb0b894ab667569d2f9bd9376b0f422.jpg" alt="CASE HUNT" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -89,7 +89,7 @@ export default function Events() {
           {/* BRANDWARS */}
           <Link to="/events/brand-wars" className="event-card">
             <div className="event-card-img brandwars-bg">
-              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="BRANDWARS" />
+              <img src="https://i.pinimg.com/736x/e9/d8/d4/e9d8d4f0da4f39a6be8903f57b72017a.jpg" alt="BRANDWARS" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -108,7 +108,7 @@ export default function Events() {
           {/* THE FORGE */}
           <Link to="/events/the-forge" className="event-card">
             <div className="event-card-img forge-bg">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="THE FORGE" />
+              <img src="https://i.pinimg.com/736x/58/a7/c3/58a7c34ba59c61ba5da0f90f58160b8b.jpg" alt="THE FORGE" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>

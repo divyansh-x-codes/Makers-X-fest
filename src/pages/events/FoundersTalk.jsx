@@ -9,11 +9,7 @@ export default function FoundersTalk() {
         <span className="event-big-icon">☕</span>
         <h1 className="event-detail-title" style={{color:'var(--orange)', textShadow:'var(--glow-amber)'}}>FOUNDERS TALK</h1>
         <div className="event-detail-meta">
-          <span className="ev-meta-chip highlight">Day 2</span>
-          <span className="ev-meta-chip highlight">Café Networking</span>
-          <span className="ev-meta-chip">📍 Networking Lounge</span>
-          <span className="ev-meta-chip">🤝 Co-hosted with E-Cell</span>
-          <span className="ev-meta-chip">☕ Unlimited Coffee & Conversations</span>
+     
         </div>
       </div>
 

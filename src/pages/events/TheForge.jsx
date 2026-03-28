@@ -8,8 +8,8 @@ export default function TheForge() {
         <span className="event-big-icon">⚙️</span>
         <h1 className="event-detail-title" style={{color:'var(--teal)', textShadow:'var(--glow-teal)'}}>THE FORGE</h1>
         <div className="event-detail-meta">
-          <span className="ev-meta-chip" style={{borderColor:'var(--teal)', color:'var(--teal)', background:'rgba(0,255,209,0.08)'}}>Day 1</span>
-          <span className="ev-meta-chip">🌐 Inter-College / Open</span>
+          <span className="ev-meta-chip" style={{borderColor:'var(--teal)', color:'var(--teal)', background:'rgba(0,255,209,0.08)'}}></span>
+ 
           <span className="ev-meta-chip">👥 Teams of 2–4</span>
         </div>
       </div>

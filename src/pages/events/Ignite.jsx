@@ -7,13 +7,8 @@ export default function Ignite() {
       <div className="event-detail-hero" style={{'--ev-glow':'rgba(245,166,35,0.08)'}}>
         <span className="event-big-icon">🔥</span>
         <h1 className="event-detail-title" style={{color:'var(--amber)', textShadow:'var(--glow-amber)'}}>IGNITE</h1>
-        <div className="event-detail-meta">
-          <span className="ev-meta-chip highlight">Day 1</span>
-          <span className="ev-meta-chip highlight">10AM – 3PM</span>
-          <span className="ev-meta-chip">🏛 Mini Auditorium</span>
-          <span className="ev-meta-chip">🌐 Inter-College / Open</span>
-          <span className="ev-meta-chip">💰 Prizes: ₹15,000</span>
-        </div>
+  
+   
       </div>
       <div className="event-body">
         <Reveal>

@@ -9,10 +9,7 @@ export default function Mokshapatram() {
         <span className="event-big-icon">🎲</span>
         <h1 className="event-detail-title" style={{color:'var(--green)', textShadow:'0 0 15px rgba(57,255,20,0.4)'}}>MOKSHAPATRAM</h1>
         <div className="event-detail-meta">
-          <span className="ev-meta-chip highlight">Day 2</span>
-          <span className="ev-meta-chip highlight">11AM – 1PM</span>
-          <span className="ev-meta-chip">📍 Open Outdoor Space</span>
-          <span className="ev-meta-chip">🌐 Open to All Attendees</span>
+      
           <span className="ev-meta-chip">💡 No Prior Knowledge Required</span>
         </div>
       </div>

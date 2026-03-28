@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import HeroCanvas from '../components/HeroCanvas';
+
 import Reveal from '../components/Reveal';
 
 import makersLogo from '../assets/fire.gif';
@@ -44,8 +44,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero" className="grid-sparkle-bg">
 
-        <HeroCanvas />
-        <div className="hero-bg"></div>
+
 
 
 
@@ -108,7 +107,7 @@ export default function Home() {
           <Link to="/events/ignite" className="event-card flagship flagship-glow">
             <div className="flagship-label">Flagship Event</div>
             <div className="event-card-img ignite-bg">
-              <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=800&auto=format&fit=crop" alt="IGNITE" />
+              <img src="https://i.pinimg.com/736x/14/be/10/14be1075d3106e4e8c6187c2f8c192af.jpg" alt="IGNITE" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -127,7 +126,7 @@ export default function Home() {
           {/* CASE HUNT */}
           <Link to="/events/casehunt" className="event-card">
             <div className="event-card-img casehunt-bg">
-              <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=800&auto=format&fit=crop" alt="CASE HUNT" />
+              <img src="https://i.pinimg.com/736x/be/b0/b8/beb0b894ab667569d2f9bd9376b0f422.jpg" alt="CASE HUNT" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -186,7 +185,7 @@ export default function Home() {
           {/* BRANDWARS */}
           <Link to="/events/brand-wars" className="event-card">
             <div className="event-card-img brandwars-bg">
-              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="BRANDWARS" />
+              <img src="https://i.pinimg.com/736x/e9/d8/d4/e9d8d4f0da4f39a6be8903f57b72017a.jpg" alt="BRANDWARS" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>

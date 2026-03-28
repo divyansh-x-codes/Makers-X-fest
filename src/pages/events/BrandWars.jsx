@@ -8,8 +8,8 @@ export default function BrandWars() {
         <span className="event-big-icon">⚔️</span>
         <h1 className="event-detail-title" style={{color:'var(--amber)', textShadow:'var(--glow-amber)'}}>BRANDWARS</h1>
         <div className="event-detail-meta">
-          <span className="ev-meta-chip highlight">Day 1</span>
-          <span className="ev-meta-chip">🌐 Inter-College / Open</span>
+          <span className="ev-meta-chip highlight"></span>
+
           <span className="ev-meta-chip">👥 Teams of 2–3</span>
         </div>
       </div>

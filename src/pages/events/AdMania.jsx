@@ -8,8 +8,8 @@ export default function AdMania() {
         <span className="event-big-icon">📣</span>
         <h1 className="event-detail-title" style={{color:'var(--red)', textShadow:'0 0 20px rgba(255,69,96,0.4)'}}>AD MANIA</h1>
         <div className="event-detail-meta">
-          <span className="ev-meta-chip" style={{borderColor:'var(--red)', color:'var(--red)', background:'rgba(255,69,96,0.08)'}}>Day 1</span>
-          <span className="ev-meta-chip">🌐 Inter-College / Open</span>
+          <span className="ev-meta-chip" style={{borderColor:'var(--red)', color:'var(--red)', background:'rgba(255,69,96,0.08)'}}></span>
+       
           <span className="ev-meta-chip">👥 Teams of 2–4</span>
         </div>
       </div>

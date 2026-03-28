@@ -8,8 +8,8 @@ export default function FoundersRunway() {
         <span className="event-big-icon">🚀</span>
         <h1 className="event-detail-title" style={{color:'var(--purple)', textShadow:'var(--glow-purple)'}}>FOUNDERS' RUNWAY</h1>
         <div className="event-detail-meta">
-          <span className="ev-meta-chip" style={{borderColor:'var(--purple)', color:'var(--purple)', background:'rgba(155,89,255,0.08)'}}>Day 1</span>
-          <span className="ev-meta-chip">🌐 Inter-College / Open</span>
+          <span className="ev-meta-chip" style={{borderColor:'var(--purple)', color:'var(--purple)', background:'rgba(155,89,255,0.08)'}}></span>
+     
           <span className="ev-meta-chip">👥 Solo or Team</span>
         </div>
       </div>

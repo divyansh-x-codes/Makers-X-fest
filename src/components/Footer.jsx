@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer-col-v3 brand-section">
             <Link to="/" className="footer-logo">
-              <img src="src/assets/fire .gif" alt="MakersX Logo" className="footer-logo-img" />
+              <img src="src/assets/fire.gif" alt="MakersX Logo" className="footer-logo-img" />
             </Link>
             <p className="footer-motto-text">IGNITE. BUILD. WIN.</p>
             <p className="footer-subtext">Innovation beyond limits.</p>
