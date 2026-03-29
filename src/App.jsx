@@ -16,7 +16,7 @@ import CaseHunt from './pages/events/CaseHunt'
 import FoundersRunway from './pages/events/FoundersRunway'
 import AdMania from './pages/events/AdMania'
 import BrandWars from './pages/events/BrandWars'
-import TheForge from './pages/events/TheForge'
+import TheListing from './pages/events/TheListing'
 import Mokshapatram from './pages/events/Mokshapatram'
 import FoundersTalk from './pages/events/FoundersTalk'
 
@@ -62,7 +62,7 @@ function App() {
             <Route path="/events/founders-runway" element={<FoundersRunway />} />
             <Route path="/events/ad-mania" element={<AdMania />} />
             <Route path="/events/brand-wars" element={<BrandWars />} />
-            <Route path="/events/the-forge" element={<TheForge />} />
+            <Route path="/events/the-listing" element={<TheListing />} />
             <Route path="/events/mokshapatram" element={<Mokshapatram />} />
             <Route path="/events/founders-talk" element={<FoundersTalk />} />
           </Routes>

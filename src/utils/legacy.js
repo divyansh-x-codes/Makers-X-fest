@@ -18,7 +18,7 @@ const pageMap = {
   'founders-runway': 'page-founders-runway',
   'ad-mania': 'page-ad-mania',
   'brand-wars': 'page-brand-wars',
-  'the-forge': 'page-the-forge',
+  'the-listing': 'page-the-listing',
   'register': 'page-register',
   'team': 'page-team',
   'contact': 'page-contact'

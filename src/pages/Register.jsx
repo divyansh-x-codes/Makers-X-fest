@@ -1,159 +1,95 @@
-import { useState } from 'react';
-import { useToast } from '../components/ToastContext';
-
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+import Reveal from '../components/Reveal';
 
 export default function Register() {
-  const showToast = useToast();
-  const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', college: '', 
-    year: '', team: '', size: '1', message: '', events: []
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const toggleEvent = (val) => {
-    setFormData(prev => {
-      const events = prev.events.includes(val) 
-        ? prev.events.filter(e => e !== val)
-        : [...prev.events, val];
-      return { ...prev, events };
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const { name, email, phone, college, year, team, size, message, events } = formData;
-    
-    if(!name) { showToast('error','Name is required','Please fill in your full name'); return; }
-    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('error','Invalid email','Please enter a valid email address'); return; }
-    if(!phone || phone.length !== 10 || isNaN(phone)) { showToast('error','Invalid phone number','Please enter a 10-digit phone number'); return; }
-    if(!college) { showToast('error','College name required','Please fill in your institution'); return; }
-    if(events.length === 0) { showToast('error','Select at least one event','Please select the event(s) you want to register for'); return; }
-
-    setIsSubmitting(true);
-    const payload = { 
-      full_name: name, email, phone, college, 
-      year_of_study: year, events, 
-      team_name: team || null, 
-      team_size: parseInt(size) || 1, 
-      message: message || null 
-    };
-
-    try {
-      if(SUPABASE_URL === 'YOUR_SUPABASE_URL') {
-        await new Promise(r => setTimeout(r, 1200));
-        showToast('success','Registration Received! 🎉','Set up Supabase to save data to your database');
-        setFormData({ name: '', email: '', phone: '', college: '', year: '', team: '', size: '1', message: '', events: [] });
-      } else {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/registrations`,{
-          method:'POST',
-          headers:{
-            'Content-Type':'application/json',
-            'apikey':SUPABASE_ANON_KEY,
-            'Authorization':`Bearer ${SUPABASE_ANON_KEY}`,
-            'Prefer':'return=minimal'
-          },
-          body:JSON.stringify(payload)
-        });
-        
-        if(res.ok || res.status === 201) {
-          showToast('success','Registration Successful! 🎉','We\'ll confirm via email. See you at Makers\'X Fest!');
-          setFormData({ name: '', email: '', phone: '', college: '', year: '', team: '', size: '1', message: '', events: [] });
-        } else {
-          showToast('error','Submission failed','Please try again or contact us directly.');
-        }
-      }
-    } catch(err) {
-      showToast('error','Network error','Please check your connection and try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const unstopLinks = [
+    { name: "🔥 Ignite", link: "https://unstop.com/college-fests/makersx-fest-rishihood-university-454805", color: "var(--amber)", desc: "Flagship Startup & IPO Simulation" },
+    { name: "📈 The Listing", link: "https://unstop.com/competitions/the-listing-virtual-stock-market-simulation-makersx-fest-rishihood-university-1667053", color: "var(--green)", desc: "Virtual Stock Market Trading" },
+    { name: "🧩 Case Hunt", link: "https://unstop.com/competitions/case-hunt-makersx-fest-rishihood-university-1666962", color: "var(--teal)", desc: "Business Case Strategy Competition" },
+    { name: "🚀 Founders' Runway", link: "https://unstop.com/competitions/founder-runway-makersx-fest-rishihood-university-1666970", color: "var(--purple)", desc: "Premier Startup Pitch Stage" },
+    { name: "📣 Ad Mania", link: "https://unstop.com/competitions/ad-mania-makersx-fest-rishihood-university-1666974", color: "var(--red)", desc: "Creative Advertising Challenge" },
+    { name: "⚔️ BrandWars", link: "https://unstop.com/competitions/brand-wars-rishihood-university-1666907", color: "var(--amber)", desc: "Head-to-Head Branding Battle" },
+    { name: "🎲 Mokshapatram", link: "https://unstop.com/competitions/mokshapataram-makersx-fest-rishihood-university-1666986", color: "var(--green)", desc: "Life-Sized Business Game" },
+    { name: "☕ Founders Talk", link: "https://unstop.com/college-fests/makersx-fest-rishihood-university-454805", color: "var(--grey)", desc: "Networking & Stories" }
+  ];
 
   return (
     <div id="page-register" className="page active" style={{ paddingTop: 0 }}>
       <div className="page-hero">
-        <h1>REGISTER <span style={{color:'var(--amber)'}}>NOW</span></h1>
-        <p>Secure your spot at Makers'X Fest 2026</p>
+        <h1>REGISTRATION <span style={{color:'var(--amber)'}}>HUB</span></h1>
+        <p>One-stop link to all Makers'X Fest 2026 competitions</p>
       </div>
-      <div className="register-wrap">
-        <div className="form-title">LET'S GO.</div>
-        <div className="form-sub">Fill in your details below. We'll confirm your registration via email.</div>
-        
-        <form onSubmit={handleSubmit} className="form-grid">
-          <div className="form-group">
-            <label>Full Name *</label>
-            <input type="text" placeholder="Your full name" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} disabled={isSubmitting} />
-          </div>
-          <div className="form-group">
-            <label>Email Address *</label>
-            <input type="email" placeholder="you@college.edu" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} disabled={isSubmitting} />
-          </div>
-          <div className="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" placeholder="10-digit mobile number" maxLength="10" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} disabled={isSubmitting} />
-          </div>
-          <div className="form-group">
-            <label>College Name *</label>
-            <input type="text" placeholder="Your institution" required value={formData.college} onChange={e => setFormData({...formData, college: e.target.value})} disabled={isSubmitting} />
-          </div>
-          <div className="form-group">
-            <label>Year of Study</label>
-            <select value={formData.year} onChange={e => setFormData({...formData, year: e.target.value})} disabled={isSubmitting}>
-              <option value="">Select year</option>
-              <option>1st Year</option>
-              <option>2nd Year</option>
-              <option>3rd Year</option>
-              <option>4th Year</option>
-              <option>Postgraduate</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Team Name (optional)</label>
-            <input type="text" placeholder="Your team name" value={formData.team} onChange={e => setFormData({...formData, team: e.target.value})} disabled={isSubmitting} />
-          </div>
-          <div className="form-group">
-            <label>Team Size</label>
-            <select value={formData.size} onChange={e => setFormData({...formData, size: e.target.value})} disabled={isSubmitting}>
-              {[1,2,3,4,5,6].map(n => <option key={n} value={n}>{n === 1 ? 'Solo (1)' : `${n} Members`}</option>)}
-            </select>
-          </div>
-          
-          <div className="form-group full">
-            <label>Select Event(s) *</label>
-            <div className="events-checkboxes">
-              {[
-                { id: 'ignite', label: '🔥 Ignite' },
-                { id: 'casehunt', label: '🧩 Case Hunt' },
-                { id: 'founders-runway', label: '🚀 Founders\' Runway' },
-                { id: 'ad-mania', label: '📣 Ad Mania' },
-                { id: 'brand-wars', label: '⚔️ BrandWars' },
-                { id: 'the-forge', label: '⚙️ The Forge' },
-                { id: 'mokshapatram', label: '🎲 Mokshapatram' },
-                { id: 'founders-talk', label: '☕ Founders Talk' }
-              ].map(event => (
-                <label key={event.id} className={`event-checkbox ${formData.events.includes(event.id) ? 'checked' : ''}`} onClick={(e) => { e.preventDefault(); toggleEvent(event.id); }}>
-                  <input type="checkbox" value={event.id} checked={formData.events.includes(event.id)} readOnly />
-                  <div className="check-box"></div>
-                  <span>{event.label}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-          
-          <div className="form-group full">
-            <label>Additional Message</label>
-            <textarea placeholder="Any questions or notes for the organizing team..." value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} disabled={isSubmitting}></textarea>
-          </div>
-          
-          <div className="form-group full" style={{ marginTop: '1rem' }}>
-            <button type="submit" className="submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'SUBMITTING...' : 'REGISTER NOW — MAKERS\'X FEST 2026'}
-            </button>
-          </div>
-        </form>
+      
+      <div className="register-wrap" style={{ maxWidth: '1000px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div className="form-title">JOIN THE ARENA.</div>
+          <div className="form-sub">Select an event below to register directly on Unstop.</div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          {unstopLinks.map((item, idx) => (
+            <Reveal key={idx}>
+              <a href={item.link} target="_blank" rel="noopener noreferrer" className="reg-hub-card" style={{
+                display: 'block',
+                textDecoration: 'none',
+                background: 'rgba(255,255,255,0.03)',
+                border: `1px solid rgba(255,255,255,0.08)`,
+                borderRadius: '16px',
+                padding: '2rem',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden',
+                height: '100%',
+                borderBottom: `3px solid ${item.color}`
+              }}>
+                <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{item.name.split(' ')[0]}</div>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', color: 'var(--white)', marginBottom: '0.5rem', letterSpacing: '2px' }}>
+                  {item.name.split(' ').slice(1).join(' ').toUpperCase() || item.name.toUpperCase()}
+                </h3>
+                <p style={{ color: 'var(--grey)', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>{item.desc}</p>
+                <div style={{ 
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontFamily: 'var(--font-head)',
+                  fontSize: '0.75rem',
+                  fontWeight: '700',
+                  letterSpacing: '2px',
+                  color: item.color,
+                  textTransform: 'uppercase'
+                }}>
+                  Register Now <span style={{ fontSize: '1.1rem' }}>→</span>
+                </div>
+                <div className="hover-glow" style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: `radial-gradient(circle at center, ${item.color}15 0%, transparent 70%)`,
+                  opacity: 0,
+                  transition: '0.3s'
+                }}></div>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+
+        <div style={{ marginTop: '6rem', textAlign: 'center', padding: '3rem', background: 'rgba(245,166,35,0.05)', borderRadius: '20px', border: '1px solid rgba(245,166,35,0.1)' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--amber)', marginBottom: '1rem' }}>GENERAL REGISTRATION</h2>
+          <p style={{ color: 'var(--grey)', marginBottom: '2rem' }}>Want to attend the fest as a spectator or join multiple events?</p>
+          <a href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer" className="event-register-btn" style={{ background: 'var(--amber)', color: 'var(--black)', padding: '1.2rem 3rem', textDecoration: 'none', borderRadius: '8px', fontWeight: '800', letterSpacing: '3px' }}>
+            FEST MAIN PAGE →
+          </a>
+        </div>
       </div>
+      
+      <style>{`
+        .reg-hub-card:hover {
+          background: rgba(255,255,255,0.06);
+          transform: translateY(-8px);
+          border-color: rgba(255,255,255,0.2);
+        }
+        .reg-hub-card:hover .hover-glow {
+          opacity: 1;
+        }
+      `}</style>
     </div>
   );
 }

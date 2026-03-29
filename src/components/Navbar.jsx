@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import makersLogo from '../assets/makers-logo.png';
+import makersLogo from '../assets/XSD.png';
+import { playSound } from '../utils/sounds';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,15 +17,15 @@ export default function Navbar() {
             <img src={makersLogo} alt="MakersX Logo" className="nav-logo-img" />
           </Link>
           <ul className="nav-links">
-            <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
-            <li><NavLink to="/about" className={({isActive}) => isActive ? 'active' : ''}>About</NavLink></li>
-            <li><NavLink to="/events" className={({isActive}) => isActive ? 'active' : ''}>Events</NavLink></li>
-            <li><NavLink to="/team" className={({isActive}) => isActive ? 'active' : ''}>Team</NavLink></li>
-            <li><NavLink to="/contact" className={({isActive}) => isActive ? 'active' : ''}>Contact</NavLink></li>
-            <li><NavLink to="/register" className="nav-cta">Register</NavLink></li>
+            <li><NavLink onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')} to="/" className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
+            <li><NavLink onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')} to="/about" className={({isActive}) => isActive ? 'active' : ''}>About</NavLink></li>
+            <li><NavLink onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')} to="/events" className={({isActive}) => isActive ? 'active' : ''}>Events</NavLink></li>
+            <li><NavLink onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')} to="/team" className={({isActive}) => isActive ? 'active' : ''}>Team</NavLink></li>
+            <li><NavLink onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')} to="/contact" className={({isActive}) => isActive ? 'active' : ''}>Contact</NavLink></li>
+            <li><a href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer" className="nav-cta" onMouseEnter={() => playSound('hover')} onClick={() => playSound('click')}>Register</a></li>
           </ul>
           <div className="nav-actions-mobile">
-            <Link to="/register" className="nav-register-btn-mobile" onClick={closeMenu}>REGISTER</Link>
+            <a href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer" className="nav-register-btn-mobile" onClick={closeMenu}>REGISTER</a>
             <div id="hamburger" onClick={toggleMenu} className={menuOpen ? 'open' : ''}>
               <span></span><span></span><span></span>
             </div>
@@ -39,7 +40,7 @@ export default function Navbar() {
         <Link to="/events" onClick={closeMenu}>EVENTS</Link>
         <Link to="/team" onClick={closeMenu}>TEAM</Link>
         <Link to="/contact" onClick={closeMenu}>CONTACT</Link>
-        <Link to="/register" onClick={closeMenu}>REGISTER</Link>
+        <a href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>REGISTER</a>
       </div>
     </>
   );

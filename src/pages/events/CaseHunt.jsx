@@ -37,7 +37,7 @@ export default function CaseHunt() {
           <p><strong style={{color:'var(--teal)'}}>Team Size:</strong> 3–4 members &nbsp;|&nbsp; <strong style={{color:'var(--teal)'}}>Audience:</strong> Inter-college / Open</p>
         </Reveal>
         <Reveal style={{textAlign:'center'}}>
-          <Link className="event-register-btn" to="/register" style={{background:'var(--teal)', boxShadow:'var(--glow-teal)'}}>Register for Case Hunt →</Link>
+          <a className="event-register-btn" href="https://unstop.com/competitions/case-hunt-makersx-fest-rishihood-university-1666962" target="_blank" rel="noopener noreferrer" style={{background:'var(--teal)', boxShadow:'var(--glow-teal)'}}>Register for Case Hunt →</a>
         </Reveal>
       </div>
     </div>

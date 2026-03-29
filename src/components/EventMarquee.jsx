@@ -3,7 +3,7 @@ import React from 'react';
 export default function EventMarquee() {
   const events = [
     " IGNITE", " CASE HUNT", " FOUNDERS' RUNWAY", 
-    " AD MANIA", " BRANDWARS", " THE FORGE",
+    " AD MANIA", " BRANDWARS", " THE LISTING",
     " MOKSHAPATRAM", " FOUNDERS TALK"
   ];
   // Duplicate for seamless infinite scroll

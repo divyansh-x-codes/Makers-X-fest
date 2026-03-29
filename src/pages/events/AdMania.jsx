@@ -33,7 +33,7 @@ export default function AdMania() {
           </div>
         </Reveal>
         <Reveal style={{textAlign:'center'}}>
-          <Link className="event-register-btn" to="/register" style={{background:'var(--red)', boxShadow:'0 0 20px rgba(255,69,96,0.4)'}}>Register for Ad Mania →</Link>
+          <a className="event-register-btn" href="https://unstop.com/competitions/ad-mania-makersx-fest-rishihood-university-1666974" target="_blank" rel="noopener noreferrer" style={{background:'var(--red)', boxShadow:'0 0 20px rgba(255,69,96,0.4)'}}>Register for Ad Mania →</a>
         </Reveal>
       </div>
     </div>

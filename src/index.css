@@ -136,19 +136,22 @@ body {
 
 #navbar {
   pointer-events: auto;
-  padding: 0 1rem 0 1.5rem;
-  height: 60px;
-  margin-top: 10px;
+  min-height: 60px;
+  max-width: fit-content;
+  margin: 15px auto 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 2rem;
+  padding: 0 1.5rem;
   background: rgba(6, 6, 8, 0.95);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 255, 209, 0.18);
+
   border-radius: 16px;
-  box-shadow: 0 0 15px rgba(0, 255, 209, 0.12), 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(0, 255, 209, 0.06);
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  border-color: white;
+  box-shadow: 0 0 5px rgba(244, 57, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.9);
+  /* Vibrant warm glow as per red reference */
+  transition: all 0.3s;
 }
 
 .nav-actions-mobile {
@@ -160,30 +163,31 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  height: 120%;
-  top: 120px;
+  height: 100%;
+  /* Centered vertically */
 }
 
 .nav-logo-img {
-  height: 44px;
-  width: auto;
-  filter: none;
-  transition: transform 0.3s, filter 0.3s;
-  margin-bottom: 8px;
-  border-radius: 3px;
+  height: 50px;
+  /* Restored to a prominent, readable size */
+  width: 126px;
+  mix-blend-mode: screen;
+  filter: brightness(1.2) contrast(1.1) drop-shadow(0 0 10px rgba(255, 69, 96, 0.2));
+  transition: transform 0.3s;
+  display: block;
+  object-fit: contain;
 }
 
 .nav-logo-img:hover {
   transform: scale(1.05);
-  top: 100px;
 }
 
 .nav-links {
   display: flex;
-  gap: 0.7rem;
+  gap: 1.5rem;
+  /* Increased for that clean, spaced-out look in ref 1 */
   align-items: center;
   list-style: none;
-  top: 100px;
 }
 
 .nav-links a {
@@ -203,8 +207,10 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--black);
-  background: var(--teal);
+  color: var(--white);
+  /* White text on red background */
+  background: #8b0000;
+  /* Deep red for the red theme */
 }
 
 .nav-links a.active::after {
@@ -213,22 +219,24 @@ body {
 
 .nav-cta {
   display: block;
-  background: var(--red);
-  color: var(--white) !important;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
+  background: #f7a005;
+  /* Vibrant orange/gold from reference 2 */
+  color: var(--black) !important;
+  /* High contrast dark text */
+  padding: 0.6rem 1.6rem;
+  border-radius: 12px;
   font-weight: 800;
   font-size: 0.85rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(255, 69, 96, 0.3);
+  box-shadow: 0 0 20px rgba(247, 160, 5, 0.3);
   transition: all 0.3s ease;
 }
 
 .nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: var(--glow-red);
-  background: var(--red-dim);
+  box-shadow: 0 0 30px rgba(247, 160, 5, 0.5);
+  background: #ffb433;
 }
 
 /* HAMBURGER */
@@ -243,7 +251,8 @@ body {
 #hamburger span {
   width: 24px;
   height: 2px;
-  background: var(--teal);
+  background: #ffb433;
+  /* Matches the new theme */
   border-radius: 2px;
   transition: all 0.3s;
 }
@@ -312,8 +321,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 180px;
-  padding-bottom: 40px;
+  padding-top: 160px;
+  /* Moved down for a better visual balance */
+  padding-bottom: 60px;
   overflow: hidden;
   text-align: center;
 }
@@ -338,8 +348,12 @@ body {
   position: relative;
   z-index: 2;
   max-width: 900px;
+  width: 100%;
   padding: 0 2rem;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* FLOATING BACKGROUND ICONS */
@@ -448,25 +462,42 @@ body {
 
 
 .hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  /* Clean separation gap */
+  margin-top: 70px;
+  /* Shifted down for the requested "niche" look */
+}
+
+.hero-logo-main {
+  width: 100%;
+  max-width: 780px;
+  /* Balanced desktop width restored */
+  height: auto;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 15px 50px rgba(0, 0, 0, 0.4));
+  margin: 0;
+}
+
+.hero-fest-text {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(4rem, 12vw, 10rem);
-  line-height: 0.9;
-  letter-spacing: 6px;
-  color: var(--white);
-  animation: fadeIn 0.6s ease 0.4s both;
-  border-top: 10px;
+  font-size: clamp(4rem, 15vw, 11rem);
+  /* Slightly reduced for a more elegant balance */
+  line-height: 0.85;
+  letter-spacing: 2px;
 }
 
 .hero-title .accent {
   color: var(--red);
   text-shadow: var(--glow-red);
-  border-top: 10px;
 }
 
 .hero-title .accent2 {
   color: var(--teal);
   text-shadow: var(--glow-teal);
-  border-top: 10px;
 }
 
 .hero-sub {
@@ -475,6 +506,7 @@ body {
   color: var(--grey);
   letter-spacing: 2px;
   margin: 1.5rem 0 2.5rem;
+  /* Restored for better breathing room */
   animation: fadeIn 0.6s ease 0.6s both;
 }
 
@@ -487,7 +519,7 @@ body {
 }
 
 .btn-primary {
-  background: var(--teal);
+  background-color: #f7a003;
   color: var(--black);
   font-family: var(--font-head);
   font-weight: 700;
@@ -497,16 +529,17 @@ body {
   padding: 0.9rem 2.5rem;
   border: none;
   border-radius: 4px;
+  border-color: #f79e05;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
   transition: all 0.25s;
-  box-shadow: var(--glow-teal);
+  box-shadow: #FF4560;
 }
 
 .btn-primary:hover {
-  background: var(--teal-dim);
-  box-shadow: var(--glow-teal);
+  background: #ff6b01;
+  box-shadow: #000000;
   transform: translateY(-2px);
 }
 
@@ -538,7 +571,8 @@ body {
 
 /* COUNTDOWN */
 #countdown-wrap {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
+  /* Restored and slightly increased */
   animation: fadeIn 0.6s ease 1s both;
 }
 
@@ -565,7 +599,8 @@ body {
   text-align: center;
   min-width: 90px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(0, 255, 209, 0.15);
+  border: 1px solid rgba(245, 166, 35, 0.15);
+  /* Warm amber border */
   padding: 1rem 0.6rem;
   border-radius: 12px;
   backdrop-filter: blur(8px);
@@ -574,10 +609,10 @@ body {
 }
 
 .cd-unit:hover {
-  background: rgba(0, 255, 209, 0.06);
-  border-color: var(--teal);
+  background: rgba(245, 166, 35, 0.06);
+  border-color: var(--amber);
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 209, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 166, 35, 0.2);
 }
 
 .cd-num {
@@ -585,8 +620,9 @@ body {
   font-family: var(--font-display);
   font-size: 3.5rem;
   line-height: 1;
-  color: var(--teal);
-  text-shadow: var(--glow-teal);
+  color: var(--amber);
+  /* New theme color */
+  text-shadow: 0 0 15px rgba(245, 166, 35, 0.4);
 }
 
 .cd-label {
@@ -603,7 +639,8 @@ body {
 .cd-sep {
   font-family: var(--font-display);
   font-size: 2.5rem;
-  color: rgba(0, 255, 209, 0.3);
+  color: rgba(245, 166, 35, 0.3);
+  /* Warm amber separator */
   margin: 0 -0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -638,7 +675,7 @@ body {
     margin: 0;
     line-height: 2.2;
     /* Center vertically against smaller mobile boxes */
-    color: rgba(0, 255, 209, 0.4);
+    color: rgba(245, 166, 35, 0.4);
   }
 
   .cd-unit:last-child {
@@ -2119,6 +2156,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   filter: grayscale(100%);
   transition: all 0.5s;
 }
@@ -2508,8 +2546,8 @@ footer {
     gap: 0.5rem;
     border-radius: 16px;
     background: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(245, 166, 35, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 15px rgba(245, 166, 35, 0.2);
+    border: 1px solid rgba(202, 86, 24, 0.718);
+    box-shadow: 0 1px 1px rgba(241, 107, 3, 0.8), 0 0 15px rgba(245, 166, 35, 0.2);
   }
 
   .nav-logo {
@@ -2543,6 +2581,50 @@ footer {
   #hamburger {
     display: flex;
     margin-left: 0.5rem;
+  }
+
+  /* Hero Mobile Optimized */
+  #hero {
+    padding-top: 170px;
+    /* Moved further down for a cleaner mobile look */
+    min-height: 90vh;
+  }
+
+  .hero-logo-main {
+    max-width: 100%;
+    /* Full-width mobile presence */
+    margin-top: -15px;
+  }
+
+  .hero-fest-text {
+    font-size: clamp(4rem, 20vw, 7rem);
+    /* Slightly reduced mobile size for better balance */
+    margin-top: -0.2rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    gap: 0.8rem;
+  }
+
+  .hero-btns .btn-primary,
+  .hero-btns .btn-outline {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  #countdown-wrap {
+    margin-top: 2.5rem;
   }
 }
 
@@ -2827,10 +2909,11 @@ footer {
 }
 
 .footer-logo-img {
-  height: 48px;
+  height: 55px;
   width: auto;
-  border-radius: 3px;
-  filter: none;
+  mix-blend-mode: screen;
+  filter: brightness(1.1) contrast(1.1);
+  transition: transform 0.3s ease;
 }
 
 .footer-motto-text {
@@ -3137,4 +3220,35 @@ footer {
   50% {
     transform: rotate(10deg) scale(1.2);
   }
+}
+
+/* PRELOADER INTERACTION */
+.enter-fest-btn {
+  background: var(--teal);
+  color: var(--black);
+  border: none;
+  padding: 1.2rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 255, 209, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.enter-fest-btn:hover {
+  transform: scale(1.05);
+  background: var(--white);
+  box-shadow: 0 0 50px rgba(0, 255, 209, 0.6);
+}
+
+.enter-fest-btn:active {
+  transform: scale(0.95);
+}
+
+#page-home .hero-content {
+  z-index: 5;
 }

@@ -33,7 +33,7 @@ export default function BrandWars() {
           </div>
         </Reveal>
         <Reveal style={{textAlign:'center'}}>
-          <Link className="event-register-btn" to="/register">Register for BrandWars →</Link>
+          <a className="event-register-btn" href="https://unstop.com/competitions/brand-wars-rishihood-university-1666907" target="_blank" rel="noopener noreferrer">Register for BrandWars →</a>
         </Reveal>
       </div>
     </div>

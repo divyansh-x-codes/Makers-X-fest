@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import makersLogoFooter from '../assets/makers-logo.png';
+import makersLogoFooter from '../assets/XSD.png';
 
 export default function Footer() {
   return (

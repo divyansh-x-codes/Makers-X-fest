@@ -13,7 +13,7 @@ export default function Events() {
           {/* IGNITE */}
           <Link to="/events/ignite" className="event-card">
             <div className="event-card-img ignite-bg">
-              <img src="https://i.pinimg.com/736x/14/be/10/14be1075d3106e4e8c6187c2f8c192af.jpg" alt="IGNITE" />
+              <img src="https://i.pinimg.com/736x/5c/b2/ef/5cb2efafa2bbbb702a01d3b1c92690b4.jpg" alt="IGNITE" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -29,10 +29,29 @@ export default function Events() {
             <div className="status-badge closed">REGISTRATION OPEN</div>
           </Link>
 
+          {/* THE LISTING */}
+          <Link to="/events/the-listing" className="event-card">
+            <div className="event-card-img listing-bg">
+              <img src="https://i.pinimg.com/736x/c2/28/d5/c228d56188c99bb379a441d35ae2b00d.jpg" alt="THE LISTING" />
+              <div className="reg-badge">
+                <span>REG</span>
+                <span>OPEN</span>
+              </div>
+            </div>
+            <div className="event-card-body">
+              <div className="event-card-title">THE LISTING</div>
+              <div className="event-card-meta">
+                <div className="meta-row prize"><span className="icon">🏆</span>Virtual stock market where you trade Ignite's startups. High-stakes financial strategy.</div>
+              </div>
+              <button className="view-btn">VIEW DETAILS</button>
+            </div>
+            <div className="status-badge closed">REGISTRATION OPEN</div>
+          </Link>
+
           {/* CASE HUNT */}
           <Link to="/events/casehunt" className="event-card">
             <div className="event-card-img casehunt-bg">
-              <img src="https://i.pinimg.com/736x/be/b0/b8/beb0b894ab667569d2f9bd9376b0f422.jpg" alt="CASE HUNT" />
+              <img src="https://i.pinimg.com/736x/a0/dd/1e/a0dd1ef16735a305b418d84340aacb00.jpg" alt="CASE HUNT" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -51,7 +70,7 @@ export default function Events() {
           {/* FOUNDERS' RUNWAY */}
           <Link to="/events/founders-runway" className="event-card">
             <div className="event-card-img founders-bg">
-              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="FOUNDERS' RUNWAY" />
+              <img src="https://i.pinimg.com/736x/83/73/16/837316b3c36d98e8eb6b6d9b9d173969.jpg" alt="FOUNDERS' RUNWAY" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -70,7 +89,7 @@ export default function Events() {
           {/* AD MANIA */}
           <Link to="/events/ad-mania" className="event-card">
             <div className="event-card-img admania-bg">
-              <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=800&auto=format&fit=crop" alt="AD MANIA" />
+              <img src="https://i.pinimg.com/736x/0d/6c/4f/0d6c4fdcd14b73293fc320d3c6e4bb42.jpg" alt="AD MANIA" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -89,7 +108,7 @@ export default function Events() {
           {/* BRANDWARS */}
           <Link to="/events/brand-wars" className="event-card">
             <div className="event-card-img brandwars-bg">
-              <img src="https://i.pinimg.com/736x/e9/d8/d4/e9d8d4f0da4f39a6be8903f57b72017a.jpg" alt="BRANDWARS" />
+              <img src="https://i.pinimg.com/736x/63/00/b3/6300b3b95db7dd71079b062674f54028.jpg" alt="BRANDWARS" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -105,29 +124,13 @@ export default function Events() {
             <div className="status-badge closed">REGISTRATION OPEN</div>
           </Link>
 
-          {/* THE FORGE */}
-          <Link to="/events/the-forge" className="event-card">
-            <div className="event-card-img forge-bg">
-              <img src="https://i.pinimg.com/736x/58/a7/c3/58a7c34ba59c61ba5da0f90f58160b8b.jpg" alt="THE FORGE" />
-              <div className="reg-badge">
-                <span>REG</span>
-                <span>OPEN</span>
-              </div>
-            </div>
-            <div className="event-card-body">
-              <div className="event-card-title">THE FORGE</div>
-              <div className="event-card-meta">
-                <div className="meta-row prize"><span className="icon">🏆</span>Build a working product prototype from scratch in hours. Innovation under a ticking clock.</div>
-              </div>
-              <button className="view-btn">VIEW DETAILS</button>
-            </div>
-            <div className="status-badge closed">REGISTRATION OPEN</div>
-          </Link>
+
+
 
           {/* MOKSHAPATRAM */}
           <Link to="/events/mokshapatram" className="event-card">
             <div className="event-card-img moksha-bg">
-              <img src="https://i.pinimg.com/736x/91/fd/51/91fd51c7e3544547dd05c0b5cb177b14.jpg" alt="MOKSHAPATRAM" />
+              <img src="https://i.pinimg.com/736x/ec/9c/2b/ec9c2bb65f82c30c654f4b30ea5859bc.jpg" alt="MOKSHAPATRAM" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>
@@ -146,7 +149,7 @@ export default function Events() {
           {/* FOUNDERS TALK */}
           <Link to="/events/founders-talk" className="event-card">
             <div className="event-card-img founders-talk-bg">
-              <img src="https://i.pinimg.com/736x/82/b4/2e/82b42e66787734f97860ca0fffdb10c5.jpg" alt="FOUNDERS TALK" />
+              <img src="https://i.pinimg.com/736x/ad/54/ef/ad54ef609a8498b4475905749abc386f.jpg" alt="FOUNDERS TALK" />
               <div className="reg-badge">
                 <span>REG</span>
                 <span>OPEN</span>

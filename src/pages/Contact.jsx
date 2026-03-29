@@ -66,14 +66,14 @@ export default function Contact() {
           <div className="organizer-squad">
             <div className="organizer-card compact">
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                <img src="https://i.pinimg.com/736x/80/bd/1b/80bd1b85ef4bfc7c01423b20cf842835.jpg" alt="Adarsh Mishra" className="organizer-avatar" style={{ width: '60px', height: '60px', objectFit: 'cover' }} />
+                <img src="https://i.pinimg.com/736x/83/62/13/836213dad83fe1c1d39d7e99df958c48.jpg" className="organizer-avatar" style={{ width: '60px', height: '60px', objectFit: 'cover' }} />
                 <div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', letterSpacing: '2px', color: 'var(--amber)' }}>Adarsh Mishra</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', letterSpacing: '2px', color: 'var(--amber)' }}>Siddardha Gangeli</div>
                   <div style={{ color: 'var(--grey)', fontSize: '0.85rem' }}>Outreach Member, Makers'X Fest</div>
                 </div>
               </div>
               <div style={{ marginTop: '0.8rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', }}>
-                <a href="https://www.linkedin.com/in/adarsh-mishra09/" target="_blank" rel="noopener noreferrer" className="org-link linkedin-btn" style={{ width: 'fit-content' }}>
+                <a href=" " target="_blank" rel="noopener noreferrer" className="org-link linkedin-btn" style={{ width: 'fit-content' }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" /><circle cx="4" cy="4" r="2" /></svg>
                   LinkedIn Profile
                 </a>

@@ -48,7 +48,7 @@ export default function Mokshapatram() {
         </Reveal>
 
         <Reveal style={{textAlign:'center', marginTop:'4rem'}}>
-          <Link className="event-register-btn" to="/register" style={{background:'var(--green)', color:'#000', boxShadow:'0 0 20px rgba(57,255,20,0.3)'}}>Register Now — Make Your Move →</Link>
+          <a className="event-register-btn" href="https://unstop.com/competitions/mokshapataram-makersx-fest-rishihood-university-1666986" target="_blank" rel="noopener noreferrer" style={{background:'var(--green)', color:'#000', boxShadow:'0 0 20px rgba(57,255,20,0.3)'}}>Register Now — Make Your Move →</a>
         </Reveal>
       </div>
     </div>

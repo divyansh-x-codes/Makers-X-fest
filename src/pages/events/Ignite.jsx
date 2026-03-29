@@ -71,7 +71,7 @@ export default function Ignite() {
 
         
         <Reveal style={{textAlign:'center'}}>
-          <Link className="event-register-btn" to="/register">Register for Ignite →</Link>
+          <a className="event-register-btn" href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer">Register for Ignite →</a>
         </Reveal>
       </div>
     </div>

@@ -37,7 +37,7 @@ export default function FoundersRunway() {
           <p><strong style={{color:'var(--purple)'}}>Team Size:</strong> 1–4 members &nbsp;|&nbsp; <strong style={{color:'var(--purple)'}}>Audience:</strong> Inter-college / Open</p>
         </Reveal>
         <Reveal style={{textAlign:'center'}}>
-          <Link className="event-register-btn" to="/register" style={{background:'var(--purple)', boxShadow:'var(--glow-purple)'}}>Register for Founders' Runway →</Link>
+          <a className="event-register-btn" href="https://unstop.com/competitions/founder-runway-makersx-fest-rishihood-university-1666970" target="_blank" rel="noopener noreferrer" style={{background:'var(--purple)', boxShadow:'var(--glow-purple)'}}>Register for Founders' Runway →</a>
         </Reveal>
       </div>
     </div>
