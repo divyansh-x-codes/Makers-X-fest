@@ -50,7 +50,7 @@ export default function Team() {
       pocs: [
         { name: "Palak", img: "https://i.pinimg.com/736x/ae/f5/70/aef570375a6cd9179a61f4095fcf005c.jpg", linkedin: "" },
         { name: "Tiya", img: "https://i.pinimg.com/736x/41/95/40/419540c42f0d0a6254423fd1596b7959.jpg", linkedin: "" },
-        { name: "Vansh", img: "https://i.pinimg.com/736x/0c/45/15/0c45157f208ca56a3eb263a19895674d.jpg", linkedin: "" }
+        { name: "Vansh", img: "", linkedin: "" }
       ]
     },
     {

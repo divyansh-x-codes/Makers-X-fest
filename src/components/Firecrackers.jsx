@@ -66,7 +66,7 @@ const Firecrackers = ({ active = true, duration = 5000 }) => {
     let timer = 0;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       // Random bursts
       if (Math.random() < 0.08 && timer < duration) {
         createFirework(
