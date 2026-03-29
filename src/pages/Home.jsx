@@ -50,32 +50,42 @@ export default function Home() {
 
 
         <div className="hero-content">
-          <h1 className="hero-title">
-            <img
-              src={makersLogo}
-              alt="Makers X"
-              className="hero-logo-main"
-            />
-            <div className="hero-fest-text"><span className="accent2">FEST</span> 2026</div>
-          </h1 >
+          <Reveal className="delay-100">
+            <h1 className="hero-title">
+              <img
+                src={makersLogo}
+                alt="Makers X"
+                className="hero-logo-main"
+              />
+              <div className="hero-fest-text"><span className="accent2">FEST</span> 2026</div>
+            </h1>
+          </Reveal>
 
-          <p className="hero-sub">Where Ideas Ignite. Markets Move. Brands Win.</p>
-          <div className="hero-btns">
-            <Link className="btn-primary" to="/events">Explore Events</Link>
-            <a href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer" className="btn-outline">Register Now</a>
-          </div>
-          <div id="countdown-wrap">
-            <div className="countdown-label">Event Countdown</div>
-            <div className="countdown-timer">
-              <div className="cd-unit"><span className="cd-num">{timeLeft.d}</span><span className="cd-label">Days</span></div>
-              <div className="cd-sep">:</div>
-              <div className="cd-unit"><span className="cd-num">{timeLeft.h}</span><span className="cd-label">Hours</span></div>
-              <div className="cd-sep">:</div>
-              <div className="cd-unit"><span className="cd-num">{timeLeft.m}</span><span className="cd-label">Minutes</span></div>
-              <div className="cd-sep">:</div>
-              <div className="cd-unit"><span className="cd-num">{timeLeft.s}</span><span className="cd-label">Seconds</span></div>
+          <Reveal className="delay-300">
+            <p className="hero-sub">Where Ideas Ignite. Markets Move. Brands Win.</p>
+          </Reveal>
+
+          <Reveal className="delay-500">
+            <div className="hero-btns">
+              <Link className="btn-primary" to="/events">Explore Events</Link>
+              <a href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer" className="btn-outline">Register Now</a>
             </div>
-          </div>
+          </Reveal>
+
+          <Reveal className="delay-700">
+            <div id="countdown-wrap">
+              <div className="countdown-label">Event Countdown</div>
+              <div className="countdown-timer">
+                <div className="cd-unit"><span className="cd-num">{timeLeft.d}</span><span className="cd-label">Days</span></div>
+                <div className="cd-sep">:</div>
+                <div className="cd-unit"><span className="cd-num">{timeLeft.h}</span><span className="cd-label">Hours</span></div>
+                <div className="cd-sep">:</div>
+                <div className="cd-unit"><span className="cd-num">{timeLeft.m}</span><span className="cd-label">Minutes</span></div>
+                <div className="cd-sep">:</div>
+                <div className="cd-unit"><span className="cd-num">{timeLeft.s}</span><span className="cd-label">Seconds</span></div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
