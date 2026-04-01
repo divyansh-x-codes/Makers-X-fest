@@ -48,10 +48,10 @@ export default function CustomCursor() {
       }
     }
 
-    const onMouseMove = (e) => { 
-      mx = e.clientX; 
-      my = e.clientY; 
-      
+    const handleInput = (clientX, clientY) => {
+      mx = clientX;
+      my = clientY;
+
       const dist = Math.hypot(mx - lastMx, my - lastMy);
       if (dist > 3) {
         for (let i = 0; i < 2; i++) {
@@ -61,13 +61,21 @@ export default function CustomCursor() {
         lastMy = my;
       }
     };
-    
+
+    const onMouseMove = (e) => handleInput(e.clientX, e.clientY);
+    const onTouchMove = (e) => {
+      if (e.touches.length > 0) {
+        handleInput(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
     window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
 
     let animationFrameId;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
@@ -79,11 +87,12 @@ export default function CustomCursor() {
 
       animationFrameId = requestAnimationFrame(animate);
     };
-    
+
     animate();
 
     return () => {
       window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('touchmove', onTouchMove);
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
