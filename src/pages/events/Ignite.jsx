@@ -4,11 +4,11 @@ import Reveal from '../../components/Reveal';
 export default function Ignite() {
   return (
     <div id="page-ignite" className="page active" style={{ paddingTop: 0 }}>
-      <div className="event-detail-hero" style={{'--ev-glow':'rgba(245,166,35,0.08)'}}>
+      <div className="event-detail-hero" style={{ '--ev-glow': 'rgba(245,166,35,0.08)' }}>
         <span className="event-big-icon">🔥</span>
-        <h1 className="event-detail-title" style={{color:'var(--amber)', textShadow:'var(--glow-amber)'}}>IGNITE</h1>
-  
-   
+        <h1 className="event-detail-title" style={{ color: 'var(--amber)', textShadow: 'var(--glow-amber)' }}>IGNITE</h1>
+
+
       </div>
       <div className="event-body">
         <Reveal>
@@ -16,7 +16,7 @@ export default function Ignite() {
           <p>Ignite is a multi-phase entrepreneurship and finance simulation competition that bridges startup culture with real-world capital markets. The event is designed to give participants an immersive experience of the entire startup-to-IPO journey — from pitching a business idea to being listed on a virtual stock exchange and traded by fellow participants.</p>
           <p>Ignite brings together entrepreneurial thinking, financial literacy, and market strategy in one cohesive, high-energy competition unlike any standard business plan competition.</p>
         </Reveal>
-        
+
         <Reveal>
           <div className="event-section-h">EVENT PHASES</div>
           <div className="phase-card">
@@ -57,9 +57,9 @@ export default function Ignite() {
             <span className="flow-step">Results & Prize Distribution</span>
           </div>
         </Reveal>
-        
-      
-        
+
+
+
         <Reveal>
           <div className="event-section-h">POINT OF CONTACT</div>
           <div className="poc-card">
@@ -67,10 +67,10 @@ export default function Ignite() {
             <div className="poc-item"><strong>POC 2</strong><span>Prabhav — <a href="tel:9855539056">9855539056</a></span></div>
           </div>
         </Reveal>
-        
 
-        
-        <Reveal style={{textAlign:'center'}}>
+
+
+        <Reveal style={{ textAlign: 'center' }}>
           <a className="event-register-btn" href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer">Register for Ignite →</a>
         </Reveal>
       </div>

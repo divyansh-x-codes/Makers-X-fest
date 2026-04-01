@@ -75,35 +75,16 @@ body {
   color: var(--white);
   font-family: var(--font-body);
   overflow-x: hidden;
-  cursor: none;
 }
 
-/* CUSTOM CURSOR */
-#cursor {
-  width: 12px;
-  height: 12px;
-  background: var(--teal);
-  border-radius: 50%;
+#cursor-canvas {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.1s, background 0.2s;
-  mix-blend-mode: difference;
-}
-
-#cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(0, 255, 209, 0.5);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.15s ease, width 0.2s, height 0.2s;
 }
 
 /* SCANLINE OVERLAY - Only on events-grid areas preferably, or subtle globally */
@@ -1370,7 +1351,9 @@ body {
 }
 
 .view-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 24px;
   background: var(--teal);
   color: #000 !important;
@@ -1384,7 +1367,6 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: auto;
   width: fit-content;
   text-align: center;
 }
@@ -1394,6 +1376,44 @@ body {
   background: var(--teal-dim);
   box-shadow: var(--glow-teal);
   opacity: 1;
+}
+
+.event-card-btns {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.register-btn {
+  background: var(--teal) !important;
+  color: #000 !important;
+}
+
+/* Individual Event Theme Colors for Grid Buttons */
+.reg-teal { background: var(--teal) !important; color: #000 !important; }
+.reg-teal:hover { background: var(--teal-dim) !important; box-shadow: var(--glow-teal) !important; }
+
+.reg-red { background: var(--red) !important; color: #000 !important; }
+.reg-red:hover { background: var(--red-dim) !important; box-shadow: var(--glow-red) !important; }
+
+.reg-amber { background: var(--amber) !important; color: #000 !important; }
+.reg-amber:hover { background: var(--amber-dim) !important; box-shadow: var(--glow-amber) !important; }
+
+.reg-purple { background: var(--purple) !important; color: #000 !important; }
+.reg-purple:hover { background: rgba(155, 89, 255, 0.8) !important; box-shadow: var(--glow-purple) !important; }
+
+.reg-green { background: var(--green) !important; color: #000 !important; }
+.reg-green:hover { background: #2dab55 !important; box-shadow: 0 0 20px rgba(57, 217, 106, 0.4) !important; }
+
+.reg-orange { background: var(--orange) !important; color: #000 !important; }
+.reg-orange:hover { background: #cc5600 !important; box-shadow: 0 0 20px rgba(255, 107, 0, 0.4) !important; }
+
+.register-btn:hover {
+  background: var(--teal-dim) !important;
+  box-shadow: var(--glow-teal) !important;
 }
 
 /* Status Badge */
@@ -3263,3 +3283,28 @@ footer {
 .delay-800 { transition-delay: 800ms; }
 .delay-900 { transition-delay: 900ms; }
 .delay-1000 { transition-delay: 1000ms; }
+
+/* EVENT DETAIL LOGO STYLES */
+.event-detail-logo-wrap {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 0 20px var(--ev-glow));
+}
+
+.event-detail-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .event-detail-logo-wrap {
+    max-width: 320px;
+    margin-bottom: 1rem;
+  }
+}

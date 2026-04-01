@@ -2,73 +2,94 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function CustomCursor() {
-  const cursorRef = useRef(null);
-  const ringRef = useRef(null);
+  const canvasRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
-    const cur = cursorRef.current;
-    const curRing = ringRef.current;
-    if (!cur || !curRing) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mx = 0, my = 0;
+    let lastMx = 0, lastMy = 0;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2.5 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.speedY = (Math.random() - 0.5) * 1.5;
+        this.color = `hsla(${170 + Math.random() * 20}, 100%, 70%, `; // Teal-ish
+        this.life = 1;
+        this.decay = Math.random() * 0.02 + 0.01;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.life -= this.decay;
+        if (this.size > 0.1) this.size -= 0.02;
+      }
+      draw() {
+        ctx.fillStyle = this.color + this.life + ')';
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = 'rgba(0, 255, 209, 0.5)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
     const onMouseMove = (e) => { 
       mx = e.clientX; 
       my = e.clientY; 
+      
+      const dist = Math.hypot(mx - lastMx, my - lastMy);
+      if (dist > 3) {
+        for (let i = 0; i < 2; i++) {
+          particles.push(new Particle(mx, my));
+        }
+        lastMx = mx;
+        lastMy = my;
+      }
     };
     
     window.addEventListener('mousemove', onMouseMove);
 
     let animationFrameId;
-    const animateCursor = () => {
-      cur.style.transform = `translate(${mx - 6}px,${my - 6}px)`;
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      curRing.style.transform = `translate(${rx - 18}px,${ry - 18}px)`;
-      animationFrameId = requestAnimationFrame(animateCursor);
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].life <= 0) {
+          particles.splice(i, 1);
+          i--;
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
     };
     
-    animateCursor();
-
-    const attachHovers = () => {
-      document.querySelectorAll('a, button, .event-card, .event-checkbox').forEach(el => {
-        el.addEventListener('mouseenter', handleMouseEnter);
-        el.addEventListener('mouseleave', handleMouseLeave);
-      });
-    };
-
-    const handleMouseEnter = () => {
-      cur.style.transform += ' scale(2)'; 
-      curRing.style.width = '60px'; 
-      curRing.style.height = '60px'; 
-      curRing.style.borderColor = 'rgba(245,166,35,0.8)';
-    };
-
-    const handleMouseLeave = () => {
-      curRing.style.width = '36px'; 
-      curRing.style.height = '36px'; 
-      curRing.style.borderColor = 'rgba(245,166,35,0.5)';
-    }
-
-    // Delay attaching to ensure DOM updates since we navigate client-side
-    const timer = setTimeout(attachHovers, 300);
+    animate();
 
     return () => {
       window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
-      clearTimeout(timer);
-      document.querySelectorAll('a, button, .event-card, .event-checkbox').forEach(el => {
-        el.removeEventListener('mouseenter', handleMouseEnter);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
     };
-  }, [location.pathname]); // Re-attach when path changes
+  }, [location.pathname]);
 
   return (
-    <>
-      <div id="cursor" ref={cursorRef}></div>
-      <div id="cursor-ring" ref={ringRef}></div>
-    </>
+    <canvas id="cursor-canvas" ref={canvasRef}></canvas>
   );
 }

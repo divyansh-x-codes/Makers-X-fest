@@ -47,7 +47,7 @@ export default function FoundersTalk() {
         </Reveal>
 
         <Reveal style={{textAlign:'center', marginTop:'40px'}}>
-          <a className="event-register-btn" href="https://unstop.com/college-fests/makersx-fest-rishihood-university-454805" target="_blank" rel="noopener noreferrer" style={{background:'var(--orange)', boxShadow:'var(--glow-amber)'}}>Register — Join the Conversation →</a>
+          <a className="event-register-btn" href="https://unstop.com/competitions/founders-talk-real-stories-raw-insights-real-impact-makersx-fest-rishihood-university-1666994" target="_blank" rel="noopener noreferrer" style={{background:'var(--orange)', boxShadow:'var(--glow-amber)'}}>Register — Join the Conversation →</a>
         </Reveal>
       </div>
     </div>
